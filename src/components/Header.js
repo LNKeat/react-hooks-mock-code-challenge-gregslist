@@ -1,7 +1,12 @@
 import React from "react";
 import Search from "./Search";
 
-function Header() {
+//set search input to state
+//handle changes of input
+//pass search input to App & filter listings based on search input
+
+
+function Header({ onSearchSubmit}) {
   return (
     <header>
       <h1>
@@ -10,7 +15,7 @@ function Header() {
         </span>
         gregslist
       </h1>
-      <Search />
+      <Search onSearchSubmit={onSearchSubmit} />
     </header>
   );
 }

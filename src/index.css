@@ -53,6 +53,15 @@ header h1 {
   border-radius: 3px;
 }
 
+.showlistings {
+  padding: 5px;
+  margin: 10px;
+  width:fit-content;
+  background: #eee;;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
 main {
   padding: 0 1rem;
   max-width: 1200px;

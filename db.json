@@ -41,6 +41,12 @@
       "description": "Treadmill Parts For Free",
       "image": "./images/treadmill.jpg",
       "location": "East Flatbush"
+    },
+    {
+      "description": "bathrobe",
+      "image": "https://cdni.llbean.net/is/image/wim/508047_36017_41?hei=1092&wid=950&resMode=sharp2&defaultImage=llbstage/A0211793_2",
+      "location": "LLBean",
+      "id": 8
     }
   ]
 }

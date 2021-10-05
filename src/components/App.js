@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
+import AddListingForm from './AddListingForm';
 
 function App() {
   const [listings, setListings] = useState([])
@@ -25,7 +26,6 @@ function App() {
   }
 
   function handleListingDelete(listing){
-    console.log(listing)
     fetch(`http://localhost:6001/listings/${listing.id}`, {
       method: 'DELETE', 
     })
@@ -35,10 +35,18 @@ function App() {
       setListings(filteredListings)
     })
   }
+
+  function handleAddListing(newListing){
+    const upatedListings = [newListing, ...fullListings]
+    setFullListings(upatedListings)
+    setListings(upatedListings)
+  }
   return (
     <div className="app">
       <Header onSearchSubmit={onSearchSubmit} />
-      {listings.length !== fullListings.length ? <button className='showlistings' onClick={()=> setListings(fullListings)}>Show All Listings</button> : null}
+      <button className='button'>Show Form</button>
+      <AddListingForm handleAddListing={handleAddListing} />
+      {listings.length !== fullListings.length ? <button className='button' onClick={()=> setListings(fullListings)}>Show All Listings</button> : null}
       <ListingsContainer listings={listings} handleListingDelete={handleListingDelete} />
     </div>
   );
